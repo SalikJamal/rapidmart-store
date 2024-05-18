@@ -1,7 +1,9 @@
 "use client"
 
 import { IProduct } from "@/lib/types"
-import Image from "next/image";
+import Image from "next/image"
+import IconButton from "@/components/ui/icon-button"
+import { Expand, ShoppingCart } from "lucide-react"
 
 interface IProductCardProps {
     data: IProduct;
@@ -20,11 +22,29 @@ export default function ProductCard({ data }: IProductCardProps) {
                     fill
                     alt="Product Image"
                 />
-                <div className="opacity-0 group-hover:opacity-100">
+                <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
                     <div className="flex gap-x-6 justify-center">
-                        {/* <IconButton /> */}
+                        <IconButton 
+                            onClick={() => {}}
+                            icon={<Expand className="text-gray-600" size={20} />}
+                        />
+                        <IconButton 
+                            onClick={() => {}}
+                            icon={<ShoppingCart className="text-gray-600" size={20} />}
+                        />
                     </div>
                 </div>
+            </div>
+            {/* Description */}
+            <div className="">
+                <p className="font-semibold text-lg">{data.name}</p>
+                <p className="text-sm text-gray-500">
+                    {data.category?.name}
+                </p>
+            </div>
+            {/* Price */}
+            <div className="flex items-center justify-between">
+                {/* <Currency value={data?.price} /> */}
             </div>
         </div>
     )
