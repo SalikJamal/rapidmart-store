@@ -5,7 +5,7 @@ export interface IReactChildren {
 
 export interface IBillboard {
     id: string;
-    name: string;
+    label: string;
     imageURL: string;
 }
 
