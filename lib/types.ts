@@ -31,7 +31,7 @@ export interface IProduct {
 
 export interface IImage {
     id: string;
-    URL: string;
+    url: string;
 }
 
 
