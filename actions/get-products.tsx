@@ -22,7 +22,7 @@ export const getProducts = async (query: IQuery): Promise<IProduct[]> => {
             isFeatured: query.isFeatured
         }
     })
-
+    
     const res = await fetch(URL)
     return res.json()
 }
