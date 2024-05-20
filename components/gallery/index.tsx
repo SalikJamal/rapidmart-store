@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Tab } from "@headlessui/react"
+import { TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react"
 import { IImage } from "@/lib/types"
 import GalleryTab from "@/components/gallery/gallery-tab"
 
@@ -12,14 +12,28 @@ interface IGalleryProps {
 
 export default function Gallery({ images }: IGalleryProps) {
     return (
-        <Tab.Group className="flex flex-col-reverse" as="div">
+        <TabGroup className="flex flex-col-reverse" as="div">
             <div className="mx-auto mt-6 hidden sm:block w-full max-w-2xl lg:max-w-none">
-                <Tab.List className="grid grid-cols-4 gap-6">
+                <TabList className="grid grid-cols-4 gap-6">
                     {images.map(image => (
                         <GalleryTab key={image.id} image={image} />
                     ))}
-                </Tab.List>
+                </TabList>
             </div>
-        </Tab.Group>
+            <TabPanels className="aspect-square w-full">
+                {images.map(image => (
+                    <TabPanel key={image.id}>
+                        <div className="aspect-square relative size-full sm:rounded-ld overflow-hidden">
+                            <Image
+                                className="object-cover object-center"
+                                src={image.url}
+                                alt="Image"
+                                fill
+                            />
+                        </div>
+                    </TabPanel>
+                ))}
+            </TabPanels>
+        </TabGroup>
     )
 }
