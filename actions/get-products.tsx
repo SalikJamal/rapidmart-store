@@ -13,7 +13,7 @@ const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`
 
 export const getProducts = async (query: IQuery): Promise<IProduct[]> => {
 
-    const url = qs.stringify({
+    const url = qs.stringifyUrl({
         url: URL,
         query: {
             categoryId: query.categoryId,
@@ -23,6 +23,6 @@ export const getProducts = async (query: IQuery): Promise<IProduct[]> => {
         }
     })
     
-    const res = await fetch(URL)
+    const res = await fetch(url)
     return res.json()
 }
