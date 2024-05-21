@@ -1,10 +1,11 @@
+export const revalidate = 0
+
 import Link from "next/link"
 import Container from "@/components/ui/container"
 import MainNav from "@/components/main-nav"
 import { getCategories } from "@/actions/get-categories"
 import NavbarActions from "@/components/navbar-actions"
 
-export const revalidate = 0
 
 export default async function Navbar() {
     
