@@ -22,8 +22,6 @@ export default function ProductCard({ data }: IProductCardProps) {
     
     return (
         <div onClick={handleClick} className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4">
-            {/* Images and Actions */}
-
             <div className="aspect-square rounded-xl bg-gray-100 relative">
                 <Image
                     className="aspect-square object-cover rounded-md"
@@ -44,14 +42,12 @@ export default function ProductCard({ data }: IProductCardProps) {
                     </div>
                 </div>
             </div>
-            {/* Description */}
             <div className="">
                 <p className="font-semibold text-lg">{data.name}</p>
                 <p className="text-sm text-gray-500">
                     {data.category?.name}
                 </p>
             </div>
-            {/* Price */}
             <div className="flex items-center justify-between">
                 <Currency value={data?.price} />
             </div>
