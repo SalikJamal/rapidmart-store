@@ -24,7 +24,7 @@ export default function CartItem({ data }: ICartItemProps) {
     }
 
     return (
-        <li className="flex py-6 border-b">
+        <li className="flex py-6 border-b lg:last:border-b-0">
             <div className="relative size-24 rounded-md overflow-hidden sm:size-48">
                 <Image
                     className="object-cover object-center"

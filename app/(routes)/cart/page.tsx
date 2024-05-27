@@ -2,6 +2,7 @@
 
 import Container from "@/components/ui/container"
 import CartItem from "@/components/cart/cart-item"
+import Summary from "@/components/cart/summary"
 import useCart from "@/hooks/use-cart"
 
 
@@ -26,6 +27,7 @@ export default function Cart() {
                                 ))}
                             </ul>
                         </div>
+                        <Summary />
                     </div>
                 </div>
             </Container>
