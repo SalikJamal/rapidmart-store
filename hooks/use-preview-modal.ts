@@ -10,10 +10,10 @@ interface IPreviewModalStore {
 
 
 const usePreviewModal = create<IPreviewModalStore>(set => ({
-    isOpen: false,
-    data: undefined,
-    onOpen: data => set({ data, isOpen: true }),
-    onClose: () => set({ isOpen: false })
+  isOpen: false,
+  data: undefined,
+  onOpen: data => set({ data, isOpen: true }),
+  onClose: () => set({ isOpen: false })
 }))
 
 
