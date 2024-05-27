@@ -4,5 +4,12 @@ import { Toaster } from "react-hot-toast"
 
 
 export default function ToastProvider() {
-    return <Toaster />
+    return (
+        <Toaster
+            gutter={4}
+            toastOptions={{
+
+            }}
+        />
+    )
 }
