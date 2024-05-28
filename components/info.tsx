@@ -13,6 +13,10 @@ export default function Info({ data }: IInfoProps) {
     
     const cart = useCart()
 
+    const onAddToCart = () => {
+        cart.addItem(data)
+    }
+
     return (
         <div>
             <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
@@ -35,7 +39,7 @@ export default function Info({ data }: IInfoProps) {
                 </div>
             </div>
             <div className="mt-10 flex items-center gap-x-3">
-                <Button className="flex items-center gap-x-2" onClick={() => cart.addItem(data)}>
+                <Button className="flex items-center gap-x-2" onClick={onAddToCart}>
                     Add to Cart
                     <ShoppingCart />
                 </Button>
