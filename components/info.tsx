@@ -1,3 +1,5 @@
+"use client"
+
 import { ShoppingCart } from "lucide-react"
 import { IProduct } from "@/lib/types"
 import useCart from "@/hooks/use-cart"
