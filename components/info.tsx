@@ -1,7 +1,8 @@
+import { ShoppingCart } from "lucide-react"
 import { IProduct } from "@/lib/types"
+import useCart from "@/hooks/use-cart"
+import Button from "@/components/ui/button"
 import Currency from "@/components/ui/currency"
-import Button from "./ui/button";
-import { ShoppingCart } from "lucide-react";
 
 interface IInfoProps {
     data: IProduct;
@@ -9,6 +10,9 @@ interface IInfoProps {
 
 
 export default function Info({ data }: IInfoProps) {
+    
+    const cart = useCart()
+
     return (
         <div>
             <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
@@ -31,7 +35,7 @@ export default function Info({ data }: IInfoProps) {
                 </div>
             </div>
             <div className="mt-10 flex items-center gap-x-3">
-                <Button className="flex items-center gap-x-2">
+                <Button className="flex items-center gap-x-2" onClick={() => cart.addItem(data)}>
                     Add to Cart
                     <ShoppingCart />
                 </Button>
