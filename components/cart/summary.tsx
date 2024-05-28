@@ -21,6 +21,8 @@ export default function Summary() {
         const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
             productIds: items.map(item => item.id)
         })
+
+        window.location = res.data.url
     }
 
     useEffect(() => {
@@ -30,7 +32,7 @@ export default function Summary() {
         }
 
         if(searchParams.get("canceled")) {
-            toast.error("Somthing went wrong.")
+            toast.error("Something went wrong.")
         }
     }, [searchParams, removeAll])
 
