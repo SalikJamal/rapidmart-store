@@ -21,8 +21,6 @@ export default function Summary() {
         const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
             productIds: items.map(item => item.id)
         })
-
-        window.location = res.data.url
     }
 
     useEffect(() => {
@@ -45,7 +43,7 @@ export default function Summary() {
                     <Currency value={totalPrice} />
                 </div>
             </div>
-            <Button className="w-full mt-6" onClick={onCheckout}>
+            <Button className="w-full mt-6" onClick={onCheckout} disabled={!items.length}>
                 Checkout
             </Button>
         </div>
